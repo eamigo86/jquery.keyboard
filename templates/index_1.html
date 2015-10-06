@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Prueba</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="Ernesto Pérez Amigo" name="author"/>
+
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- END GLOBAL MANDATORY STYLES -->
+
+        <!-- BEGIN KEYBOARD STYLES -->
+        <link href="../assets/plugins/jquery.my_plugin/jquery.other_my_plugin.css" rel="stylesheet" type="text/css"/>
+        <!-- END KEYBOARD STYLES -->
+
+        <!-- BEGIN THEME STYLES -->
+
+        <!-- END THEME STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div class="row">
+            <!--<div class="col-md-3" id="asd">
+            </div>-->
+            <div class="col-md-6">
+                <label>Prueba con Input: (Teclado US)&;asd</label>
+                <input type="text" id="example-1"  placeholder="Escriba aqui..."/><br><br>
+                <label>Prueba con TextArea: (Teclado Ruso)</label>
+                <textarea id="example-2" class="col-md-12" data="caca de pajaro" placeholder="Escriba aqui..."></textarea>
+            </div>
+            <div class="col-md-3" id="mio">
+                <button type="button" id="buttom1" class="btn-success btn">Teclado</button>
+                <button type="button" id="buttom2" class="btn-primary btn">Habilitar</button>
+                <button type="button" id="buttom3" class="btn-warning btn">Probar</button>
+                <button type="button" id="buttom4" class="btn-info btn">Test</button>
+            </div>
+        </div>
+
+        <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="../assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN KEYBOARD SCRIPTS -->
+        <script src="../assets/plugins/jquery.my_plugin/jquery.my_plugin.js" type="text/javascript"></script>
+        <!-- END KEYBOARD SCRIPTS -->
+        <script>
+        jQuery(document).ready(function() {
+            /*$('textarea').keyboard({
+                attr: 'data',
+                final_str: '**********>'
+            });*/
+
+            //$('input#example-1').keyboard(
+            $('textarea').keyboard(
+                 {
+                     //enabled: false,
+                     //theme: 'orange',
+                     url: '../assets/plugins/',
+                     trigger: '#buttom1',
+                     is_hidden: false,
+                     layout: 'en_US'
+
+                 }
+             );
+            var prueba = $('textarea').data('pluginKeyboard');
+            //prueba.mensajePublico();
+            //prueba.example();
+
+            $('#buttom2').click(function(){
+                $this = $(this);
+                prueba.setEnabled(!prueba.getEnabled());
+                $this.toggleClass('btn-primary');
+                $this.toggleClass('btn-danger');
+
+                if($this.is('.btn-primary')) $this.text('Habilitar');
+                if($this.is('.btn-danger')) $this.text('Deshabilitar');
+
+                console.log(prueba.getEnabled());
+            });
+
+            // Enter
+            /*$('#buttom3').click(function(){
+                $this = $("textarea");
+                $this.val($this.val()+String.fromCharCode(13, 10));
+                $this.focus();
+            });*/
+
+            /*$('#buttom3').click(function(){
+                $("textarea").focus();
+                var e = jQuery.Event("keydown");
+                e.which = 8; // # Some key code value
+                $("textarea").val(String.fromCharCode(e.which));
+                $("textarea").trigger(e);
+            });
+
+            $('textarea').keydown(function(e){
+               console.log('Yes keydown triggered. ' + e.which)
+            });*/
+
+            $('#buttom4').click(function(){
+                $this = $("textarea");
+                var pos = $this.prop("selectionStart");
+                values = $this.val().split('');
+
+                value = values.split
+                console.log($this.prop("selectionStart"));
+                $this.prop("selectionStart", 1);
+                $this.prop("selectionEnd", 1);
+                console.log($this.prop("selectionStart"));
+                $this.focus();
+            });
+        });
+
+        </script>
+    <!-- END JAVASCRIPTS -->
+    </body>
+    <!-- END BODY -->
+</html>

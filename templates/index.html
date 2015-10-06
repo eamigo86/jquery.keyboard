@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Prueba</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="Ernesto Pérez Amigo" name="author"/>
+
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- END GLOBAL MANDATORY STYLES -->
+
+        <!-- BEGIN KEYBOARD STYLES -->
+        <link href="../assets/plugins/jquery-keyboard/jquery.ml-keyboard.css" rel="stylesheet" type="text/css"/>
+        <!-- END KEYBOARD STYLES -->
+
+        <!-- BEGIN THEME STYLES -->
+
+        <!-- END THEME STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" id="buttom1" class="btn-danger btn"><i class="fa fa-pencil"></i>Teclado</button>
+            </div>
+            <div class="col-md-6">
+                <label>Prueba con Input: (Teclado US)</label>
+                <input type="text" id="example-1"  placeholder="Escriba aqui..."/><br><br>
+                <label>Prueba con TextArea: (Teclado Ruso)</label>
+                <textarea id="example-2" class="col-md-12" placeholder="Escriba aqui..."></textarea>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="../assets/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN KEYBOARD SCRIPTS -->
+        <script src="../assets/plugins/jquery-keyboard/jquery.ml-keyboard.js" type="text/javascript"></script>
+        <!-- END KEYBOARD SCRIPTS -->
+        <script>
+        jQuery(document).ready(function() {
+             $('input#example-1').mlKeyboard(
+                 {
+                     //enabled: false,
+                     //is_hidden: false,
+                     layout: 'en_US',
+                     trigger: '#buttom1'
+
+                 }
+             );
+             $('textarea#example-2').mlKeyboard(
+                 {
+                     is_hidden: true,
+                     //trigger: '#buttom1',
+                     layout: 'ru_RU'
+
+
+                 }
+             );
+        });
+        </script>
+    <!-- END JAVASCRIPTS -->
+    </body>
+    <!-- END BODY -->
+</html>

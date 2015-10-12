@@ -31,11 +31,19 @@ div#keyboard #keypad
     border-radius: 5px 0 0 5px;
 }
 
+/*@media screen and (min-width: 700px)*/
 @media screen and (min-width: 700px)
 {
+    div#keypad button.char{
+        /*width: 50px;            /* Ancho de las teclas */
+        width: 8.5%;            /* Ancho de las teclas */
+    }
+    div#numpad button.char{
+        width: 30%;            /* Ancho de las teclas */
+
+    }
     div#keyboard button
     {
-        width: 50px;            /* Ancho de las teclas */
         height: 50px;           /* Alto de las teclas */
         float: left;
         margin: 0 0 3px 3px;
@@ -55,40 +63,57 @@ div#keyboard #keypad
 
     div#keyboard button.backspace
     {
-        width: 10.1%;
+        width: 9.5%;
     }
 
     div#keyboard button.delete
     {
-        width:15.7%;
+        width:11%;
     }
 
     div#keyboard button.capslock
     {
-        width:19%;
+        width:18.5%;
     }
 
-    div#keyboard button.renter
+    div#keyboard button.submit
     {
-        width: 102px;
+        width: 62.5%;
     }
 
-    div#keyboard button.lenter
+    div#keyboard button.enter
     {
-        width: 102px;
+        width: 12%;
     }
 
     div#keyboard button.shift
     {
-        width: 16%;
+        width: 12.5%;
     }
 
     div#keyboard button.space
     {
-        /*clear:left;*/
-        width:72%;
+        width:99.5%;
     }
 }
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/*@media only screen and (min-width: 481px) and (max-width: 768px) {
+    div#gatekeeper{
+        width: 300px;
+    }
+}*/
+
+/* Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+
+}*/
+
+/* Large devices (large desktops, 1200px and up)
+@media (min-width: @screen-lg-min) {  }*/
 
 /*********************************/
 /**** Temas para el keyboard  ****/
